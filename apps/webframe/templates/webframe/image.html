@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
+
+</head>
+<body>
+    <div class = 'prompt'>
+        <h5>image recognition</h5>
+        <img src="" alt="">
+        <form action="/image_up" method="post">
+            {% csrf_token %}
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">choose an image to upload</label>
+            </div>
+        </form>
+        <br>
+        <a href="/">back home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class = 'wrapper1' id = 'one'>
+        <h1><span class = 's'>.</span>can<span class = 's'>s</span></h1>
+        <h6>a simple machine learning demo that can detect cans from the brands sprite, fanta, and dr.pepper</h6>
+        <br>
+        <a href="#two">scroll down</a>
+    </div>
+
+
+    <div class="wrapper2" id = 'two'>
+        <h2>choose your method of detection</h2>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card white darken-1">
+                    <div class="card-content">
+                        <span class="card-title grey-text">image recognition</span>
+                        <p>upload a picture and see if your image contains the designated cans</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/images">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card white darken-1">
+                    <div class="card-content">
+                        <span class="card-title grey-text">live object detection</span>
+                        <p>by allowing us access to your webcam, you can see a live demonstration of can detection</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/live">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#one">back to top</a>
+    </div>
+</body>
+</html>

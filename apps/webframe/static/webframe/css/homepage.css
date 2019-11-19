@@ -1,0 +1,70 @@
+
+.wrapper1{
+    height: 800px;
+    background-color: #F5F5F5;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.wrapper2{
+    height: 800px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1 {
+    margin: 0px;
+    font-size: 90px;
+    padding-top: 20%;
+    color: #595B61;
+}
+
+h2{
+    margin: 0px;
+    font-size: 50px;
+    padding-top: 15%;
+    color: #AFB0B3;
+}
+h6 {
+    width: 40%;
+    margin-left: 30%;
+    color: #AFB0B3;
+
+}
+.s { 
+    font-size: 70px;
+}
+
+.prompt{
+    height: 800px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h5 {
+    margin: 0px;
+    font-size: 40px;
+    padding-top: 7.5%;
+    color: grey;
+}
+
+.custom-file{
+    width: 40%
+}
+
+a {
+    color: black;
+}
+
+.s {
+    color: #AFB0B3;
+}
+
+.card-tile {
+    color: #747578
+}
+
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color:#AFB0B3;
+}
