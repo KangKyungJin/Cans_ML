@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="http://yourjavascript.com/7174319415/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
 
@@ -24,7 +24,6 @@
             </div>
         </form>
         <div id="photo">
-            <img src="{{images.img}}" alt="PHOTO HERE">
         </div>
         <br>
         <a href="/">back home</a>
@@ -34,11 +33,9 @@
     $('form').submit(function(e){
         e.preventDefault()
         $.ajax({
-            url: '/upload',
-            method: 'post',
-            data: $(this).serialize(),
-            success: function(serverResponse){
-                $('.images').html(serverResponse)
+            url: $('form').attr("img"),
+            success: function (serverResponse){
+                $("#photo").html(serverResponse);
             }
         })
         $(this).trigger('reset')
