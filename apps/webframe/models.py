@@ -4,5 +4,4 @@ import re
 
 # Create your models here.
 class photos(models.Model):
-    title = models.CharField(max_length=100)
-    img = models.ImageField(upload_to = 'img/')
+    img = models.FileField(upload_to='apps/webframe/media')

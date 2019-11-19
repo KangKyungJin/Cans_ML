@@ -8,4 +8,4 @@ urlpatterns = [
     url(r'^images$', views.image),
     url(r'^live$', views.webcam),
     url(r'^upload$', views.upload),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

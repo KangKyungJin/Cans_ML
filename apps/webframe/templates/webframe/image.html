@@ -24,21 +24,11 @@
             </div>
         </form>
         <div id="photo">
+            <img src="{{ images.img }}" alt="{{ images.id }}">
         </div>
         <br>
         <a href="/">back home</a>
     </div>
 </body>
-<script>
-    $('form').submit(function(e){
-        e.preventDefault()
-        $.ajax({
-            url: $('form').attr("img"),
-            success: function (serverResponse){
-                $("#photo").html(serverResponse);
-            }
-        })
-        $(this).trigger('reset')
-    })
-</script>
+
 </html>
