@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://yourjavascript.com/7174319415/script.js"></script>
     {% load static %}
     <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
 
@@ -14,16 +15,33 @@
 <body>
     <div class = 'prompt'>
         <h5>image recognition</h5>
-        <img src="" alt="">
-        <form action="/image_up" method="post">
+        <form action="/upload" method="post">
             {% csrf_token %}
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">choose an image to upload</label>
+                <input type="file" class="custom-file-input" name='img'>
+                <label class="custom-file-label" for="customFile"></label>
+                <input type="submit" value="Upload">
             </div>
         </form>
+        <div id="photo">
+            <img src="{{images.img}}" alt="PHOTO HERE">
+        </div>
         <br>
         <a href="/">back home</a>
     </div>
 </body>
+<script>
+    $('form').submit(function(e){
+        e.preventDefault()
+        $.ajax({
+            url: '/upload',
+            method: 'post',
+            data: $(this).serialize(),
+            success: function(serverResponse){
+                $('.images').html(serverResponse)
+            }
+        })
+        $(this).trigger('reset')
+    })
+</script>
 </html>

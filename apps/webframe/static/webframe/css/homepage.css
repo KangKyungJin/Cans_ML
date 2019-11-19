@@ -16,12 +16,14 @@ h1 {
     font-size: 90px;
     padding-top: 20%;
     color: #595B61;
+    font-family: "bebas_neueregular"
 }
 
 h2{
     margin: 0px;
-    font-size: 50px;
-    padding-top: 15%;
+    font-size: 30px;
+    padding-top: 10%;
+    margin-bottom: 50px;
     color: #AFB0B3;
 }
 h6 {
@@ -67,4 +69,13 @@ a {
 	width: 500px;
 	height: 375px;
 	background-color:#AFB0B3;
+}
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('bebasneue-regular-webfont.woff2') format('woff2'),
+         url('bebasneue-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
