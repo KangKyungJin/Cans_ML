@@ -45,7 +45,7 @@ h6 {
 h5 {
     margin: 0px;
     font-size: 40px;
-    padding-top: 7.5%;
+    padding-top: 4%;
     color: grey;
 }
 
@@ -74,8 +74,17 @@ a {
 @font-face {
     font-family: 'bebas_neueregular';
     src: url('bebasneue-regular-webfont.woff2') format('woff2'),
-         url('bebasneue-regular-webfont.woff') format('woff');
+        url('bebasneue-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
+img {
+    height: 30%;
+    width: 30%;
+}
+
+.btn {
+    margin-top: 10%;
+}
+

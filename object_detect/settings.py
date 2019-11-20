@@ -121,4 +121,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'apps/webframe/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/Users/kjinn/Documents/ProjectWeek/MachineLearning/object_detect/media')

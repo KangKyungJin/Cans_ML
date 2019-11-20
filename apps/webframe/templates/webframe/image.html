@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
@@ -15,20 +14,15 @@
 <body>
     <div class = 'prompt'>
         <h5>image recognition</h5>
-        <form action="/upload" method="post">
+        <form action="/upload" enctype='multipart/form-data' method = 'post'>
             {% csrf_token %}
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" name='img'>
-                <label class="custom-file-label" for="customFile"></label>
-                <input type="submit" value="Upload">
+            <div class = "container">
+                <input class = 'btn grey darken-1'type = "file" name='img'>
+                <button class = "btn grey">upload</button>
             </div>
         </form>
-        <div id="photo">
-            <img src="{{ images.img }}" alt="{{ images.id }}">
-        </div>
         <br>
         <a href="/">back home</a>
     </div>
 </body>
-
 </html>
