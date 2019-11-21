@@ -5,3 +5,8 @@ import re
 # Create your models here.
 class photos(models.Model):
     img = models.ImageField(upload_to='~/media')
+    name = models.CharField(max_length = 100)
+
+class imageDetect(models.Model):
+    img = models.ImageField(upload_to='~/media')
+    name = models.CharField(max_length = 100)

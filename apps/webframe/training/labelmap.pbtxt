@@ -1,0 +1,14 @@
+item {
+  id: 1
+  name: 'fanta'
+}
+
+item {
+  id: 2
+  name: 'sprite'
+}
+
+item {
+  id: 3
+  name: 'dr.pepper'
+}
