@@ -9,13 +9,13 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
-
+    {% static 'webframe' as baseUrl %}
 </head>
 <body>
     <div class = 'prompt'>
-        <h5>image recognition</h5>
+        <h5>post detection:</h5>
         <div id="photo">
-            <img src="{{ images.img.url }}" alt="{{ images.id }}">
+            <img src="{{ baseUrl }}/images/{{name}}" alt="image">
         <br>
         <a href="/">back home</a>
     </div>

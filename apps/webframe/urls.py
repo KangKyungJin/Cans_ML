@@ -7,7 +7,8 @@ urlpatterns = [
     url(r'^$', views.homepage),
     url(r'^images$', views.image),
     url(r'^live$', views.webcam),
-    url(r'^upload$', views.upload),
-    url(r'^ml_image$', views.ml_image),
     url(r'^ml_process$', views.ml_process),
+    url(r'^ml_image$', views.ml_image),
+    url(r'^upload$', views.upload),
+    url(r'^up_image$', views.up_image),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

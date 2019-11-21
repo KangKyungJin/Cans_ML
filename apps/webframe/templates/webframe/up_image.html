@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
+
+</head>
+<body>
+    <div class = 'prompt'>
+        <h5>your image</h5>
+        <div id="photo">
+            <img src="{{ images.img.url }}" alt="{{ images.id }}">
+            <br>
+            <a href="/ml_process">detect!</a>
+        <br>
+        <a href="/">back home</a>
+    </div>
+</body>
+</html>

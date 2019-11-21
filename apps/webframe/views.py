@@ -4,9 +4,6 @@ import os, sys
 import cv2
 import numpy as np
 import tensorflow as tf
-
-sys.path.append("..")
-
 from .utils import label_map_util
 from .utils import visualization_utils as vis_util
 
@@ -25,21 +22,29 @@ def webcam(request):
 
 def upload(request):
     image = request.FILES['img']
-    name = str(request.FILES['img'])
-    photos.objects.create(img = image, name = name)
-    return redirect('/ml_process')
+    request.session['name']= str(request.FILES['img'])
+    photos.objects.create(img = image)
+    return redirect('/up_image')
 
-def ml_image(request):
+def up_image(request):
     pic = photos.objects.last()
     context = {
         'images' : pic
     }
+    return render(request, 'webframe/up_image.html', context)
+
+def ml_image(request):
+    name =  'ml' + request.session['name']
+    context = {
+        'name' : name
+    }
     return render(request, 'webframe/ml_image.html', context)
 
+sys.path.append("..")
 def ml_process(request):
     # Name of the directory containing the object detection module we're using
     MODEL_NAME = 'inference_graph'
-    IMAGE_NAME = photos.objects.last().name
+    IMAGE_NAME = request.session['name']
 
     # Grab path to current working directory
     CWD_PATH = "C:/Users/kjkan/Documents/project_week/ML_project_week/apps/webframe/"
@@ -53,6 +58,7 @@ def ml_process(request):
 
     # Path to image
     PATH_TO_IMAGE = ('C:/Users/kjkan/Documents/project_week/ML_project_week/media/~/media/' + IMAGE_NAME)
+    PATH_TO_WRITE = ('C:/Users/kjkan/Documents/project_week/ML_project_week/apps/webframe/static/webframe/images/')
 
     # Number of classes the object detector can identify
     NUM_CLASSES = 3
@@ -121,5 +127,6 @@ def ml_process(request):
 
     # All the results have been drawn on image. Now display the image.
     # cv2.imshow('Object detector', image)
-    cv2.imwrite(filename, image)
+    cv2.imwrite(PATH_TO_WRITE + filename, image)
+
     return redirect('/ml_image')
