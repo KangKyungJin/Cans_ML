@@ -9,9 +9,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'webframe/css/homepage.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
     <script>
     $(document).ready(function(){
+        $('.materialboxed').materialbox();
         // Add smooth scrolling to all links
         $("a").on('click', function(event) {
             // Make sure this.hash has a value before overriding default behavior
@@ -30,7 +33,9 @@
                 });
             } // End if
         });
+        
     });
+    
     </script>
 </head>
 <body>
@@ -38,37 +43,63 @@
         <h1><span class = 's'>.</span>can<span class = 's'>s</span></h1>
         <h6>a simple machine learning demo that can detect cans from the brands sprite, fanta, and dr.pepper</h6>
         <br>
-        <a href="#two">scroll down</a>
+        <a href="#two">click for cans</a> | <a href="#three">click for architecture</a> | <a href="#four">click to start</a>
     </div>
 
+    <div class = "wrapper2" id = 'two'>
+        <h2>sample cans</h2>
+        <div>
+            <img class = 'sample' src="{% static 'webframe/images/dr_pepper.jpeg' %}" alt="dr.pepper">
+            <img class = 'sample' src="{% static 'webframe/images/fanta.jpg' %}" alt="fanta">
+            <img class = 'sample' src="{% static 'webframe/images/sprite.jpg' %}" alt="sprite">
+        </div>
+        <br>
+        <a href="#one">back to top</a> | <a href="#three">click for architecture</a> | <a href="#four">click to start</a>
+    </div>
 
-    <div class="wrapper2" id = 'two'>
+    <div class="wrapper2" id = 'three'>
+        <h2>the machine learning architecture</h2>
+
+        <img class="materialboxed" src="{% static 'webframe/images/rcnn.jpg' %}" alt="rcnn">
+
+        <br>
+        <a href="#one">back to top</a> | <a href="#two">click for cans</a> | <a href="#four">click to start</a>
+    </div>
+
+    <div class="wrapper2" id = 'four'>
         <h2>choose your method of detection</h2>
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s3 offset-s3">
                 <div class="card white darken-1">
                     <div class="card-content">
                         <span class="card-title grey-text">image recognition</span>
+                        <br>
                         <p>upload a picture and see if your image contains the designated cans</p>
+                        <br>
                     </div>
                     <div class="card-action">
-                        <a href="/images">This is a link</a>
+                        <a href="/images">go to image detection</a>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s3">
                 <div class="card white darken-1">
                     <div class="card-content">
                         <span class="card-title grey-text">live object detection</span>
-                        <p>by allowing us access to your webcam, you can see a live demonstration of can detection</p>
+                        <br>
+                        <p>use your webcam to see a live demonstration of can detection</p>
+                        <br>
                     </div>
                     <div class="card-action">
-                        <a href="/live">This is a link</a>
+                        <a href="/live">go to live video detection</a>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#one">back to top</a>
+        <br>
+        <a href="#one">back to top</a> | <a href="#two">click for cans</a> | <a href="#three">click for architecture</a>
     </div>
+
+
 </body>
 </html>

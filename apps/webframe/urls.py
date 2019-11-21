@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^ml_process$', views.ml_process),
     url(r'^ml_image$', views.ml_image),
     url(r'^upload$', views.upload),
-    url(r'^up_image$', views.up_image),
+    url(r'^live_feed$', views.live_feed),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

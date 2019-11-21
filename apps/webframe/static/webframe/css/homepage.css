@@ -1,12 +1,12 @@
 
 .wrapper1{
-    height: 800px;
+    height: 850px;
     background-color: #F5F5F5;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 .wrapper2{
-    height: 800px;
+    height: 850px;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -54,7 +54,7 @@ h5 {
 }
 
 a {
-    color: black;
+    color: #777777;
 }
 
 .s {
@@ -88,3 +88,28 @@ img {
     margin-top: 10%;
 }
 
+.sample {
+    max-width: 10%;
+    min-height: 10%;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.materialboxed {
+    margin: 0px auto; 
+}
+
+.web {
+    margin-top: 100px;
+}
+.btn{
+    margin-top : 50px;
+    margin-bottom: 200px;
+}
+.up {
+    margin-bottom: 200px;
+}
+
+.errors {
+  color: red;
+}

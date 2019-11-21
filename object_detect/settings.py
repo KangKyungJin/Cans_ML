@@ -122,4 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/Users/kjkan/Documents/project_week/ML_project_week/media')
+MEDIA_ROOT = os.path.join(BASE_DIR)
