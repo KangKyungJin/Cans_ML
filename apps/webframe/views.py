@@ -3,11 +3,15 @@ from .models import photos, imageDetect
 import os, sys
 import cv2
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from .utils import label_map_util
 from .utils import visualization_utils as vis_util
+# Fixed live detection
+from django.http.response import StreamingHttpResponse
 from PIL import Image
 from django.contrib import messages
+from tensorflow import keras
+import base64
 
 def homepage(request):
     return render(request, 'webframe/homepage.html')
@@ -42,6 +46,10 @@ def ml_image(request):
         'name' : image_name,
     }
     return render(request, 'webframe/ml_image.html', context)
+
+# Fixed live detection
+def video_feed(request):
+    return StreamingHttpResponse(live_feed(), content_type='multipart/x-mixed-replace; boundary=frame')
 
 sys.path.append("..")
 def ml_process(request):
@@ -136,7 +144,8 @@ def ml_process(request):
 
     return redirect('/ml_image')
 
-def live_feed(request):
+# Fixed live detection
+def live_feed():
     MODEL_NAME = 'inference_graph'
 
     # Grab path to current working directory
@@ -219,13 +228,7 @@ def live_feed(request):
             min_score_thresh=0.60)
 
         # All the results have been drawn on the frame, so it's time to display it.
-        cv2.imshow('Object detector', frame)
-
-        # Press 'q' to quit
-        # if cv2.waitKey(1) == ord('q'):
-        #     break
-
-    # Clean up
-    # video.release()
-    # cv2.destroyAllWindows()
-    return redirect('/live')
+        # cv2.imshow('Object detector', frame)
+        cv2.imwrite('demo.jpg', frame)
+        yield (b'--frame\r\n'
+			   b'Content-Type: image/jpeg\r\n\r\n' + open('demo.jpg', 'rb').read() + b'\r\n')

@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^ml_image$', views.ml_image),
     url(r'^upload$', views.upload),
     url(r'^live_feed$', views.live_feed),
+    #Fixed live_detection
+    url(r'^video_feed$', views.video_feed, name="video-feed"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

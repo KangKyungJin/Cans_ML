@@ -15,23 +15,8 @@
 <body>
     <div class = 'prompt'>
         <h5 class = 'web'>live object detection</h5>
-        <h6>*THIS DOES NOT WORK YET. SORRY</h6>
-        <img src="" alt="">
-        <div id="container">
-            <video autoplay="true" id="videoElement"></video>
-        </div>
-        <script>
-                var video = document.querySelector("#videoElement");
-                if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({ video: true })
-                    .then(function (stream) {
-                    video.srcObject = stream;
-                    })
-                    .catch(function (err0r) {
-                    console.log("Something went wrong!");
-                    });
-                }
-            </script>
+        <!--Fixed live detection-->
+        <img src="{% url 'video-feed' %}"></img>
         <br>
         <a href="/">back home</a>
     </div>
